@@ -7,6 +7,9 @@ RSpec.describe TomatosController, type: :controller do
 
       expect(response).to render_template("index")
     end
-  end
 
+    it "時間倒數完紀錄一顆番茄"
+
+    it "以任務為單位"
+  end
 end
