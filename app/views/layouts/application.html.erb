@@ -11,11 +11,21 @@
 
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="card text-center">
+      <%= render partial: "layouts/header" %>
+      <div class="card-body">
+        <%= yield %>
+        <!-- <h5 class="card&#45;title">Special title treatment</h5> -->
+        <!-- <p class="card&#45;text">With supporting text below as a natural lead&#45;in to additional content.</p> -->
+        <!-- <a href="#" class="btn btn&#45;primary">Go somewhere</a> -->
+      </div>
+      <div class="card-footer text-muted">
+        <%= render partial: "layouts/footer" %>
+      </div>
+    </div>
 
-    <%= render partial: "layouts/header" %>
-    <%= yield %>
-    <%= render partial: "layouts/footer" %>
+    <!-- <p class="notice"><%= notice %></p> -->
+    <!-- <p class="alert"><%= alert %></p> -->
+
   </body>
 </html>
