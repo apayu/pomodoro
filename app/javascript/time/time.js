@@ -2,9 +2,7 @@ $().ready(function(){
   $("#btn_start").click(function(){
 
   // 25 minutes
-  var total_seconds = 1500;
-  // // 10 minutes
-  // var total_seconds = 600;
+  var total_seconds = 10;
 
   var minutes = Math.floor(total_seconds/60);
   var seconds = total_seconds % 60;
@@ -23,29 +21,35 @@ $().ready(function(){
     s_str = seconds;
   }
 
-  document.getElementById("demo").innerHTML = m_str + ":" + s_str;
+  document.getElementById("pomo_time").innerHTML = m_str + ":" + s_str;
 
   var x = setInterval(function() {
     total_seconds = total_seconds -1;
 
-    hours = Math.floor(total_seconds/3600);
-    minutes = Math.floor(total_seconds/60);
-    seconds = total_seconds % 60;
+    if (total_seconds >= 0) {
+      hours = Math.floor(total_seconds/3600);
+      minutes = Math.floor(total_seconds/60);
+      seconds = total_seconds % 60;
 
-  if (minutes <10 ) {
-    m_str = "0" + minutes;
-  } else {
-    m_str = minutes;
-  }
+      if (minutes <10 ) {
+        m_str = "0" + minutes;
+      } else {
+        m_str = minutes;
+      }
 
-  if (seconds <10 ) {
-    s_str = "0" + seconds;
-  } else {
-    s_str = seconds;
-  }
+      if (seconds <10 ) {
+        s_str = "0" + seconds;
+      } else {
+        s_str = seconds;
+      }
 
-    document.getElementById("demo").innerHTML = m_str + ":" + s_str;
+      document.getElementById("pomo_time").innerHTML = m_str + ":" + s_str;
 
+      if (total_seconds == 0){
+        audio = new Audio('sound.mp3');
+        audio.play();
+      }
+    }
 
   }, 1000)
   // audio = new Audio('sound.mp3');

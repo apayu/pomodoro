@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap/scss/bootstrap";
+
+#pomo_time {
+  font-size: 120px;
+  font-weight: bold;
+}
+
+#btn_start {
+  font-size: 22px;
+  font-weight: bold;
+}
