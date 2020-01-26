@@ -5,11 +5,12 @@ class TomatoesController < ApplicationController
 
   def create
     @tomato = Tomato.new(tomatoes_params)
+    @tomato.account_id = current_account.id
     @tomato.save
   end
 
   private
   def tomatoes_params
-    params.require(:tomato).permit(:account_id, :time)
+    params.require(:tomato).permit(:time)
   end
 end
