@@ -4,6 +4,7 @@ $().ready(function(){
   var set_seconds = 10;
   var total_seconds = set_seconds;
   var minutes, seconds;
+  var user_id = $("#user_id").val();
 
   $("#btn_start").one("click",function(event){
 
@@ -30,19 +31,20 @@ $().ready(function(){
       if (total_seconds == 0){
         audio = new Audio('sound.mp3');
         audio.play();
-
-        $.ajax({
-          url: "tomatoes/",
-          method: "POST",
-          dataType: "json",
-          data: {
-            tomato: {
-              time: set_seconds
+        if(user_id != 0){
+          $.ajax({
+            url: "tomatoes/",
+            method: "POST",
+            dataType: "json",
+            data: {
+              tomato: {
+                time: set_seconds
+              }
+            },
+            success: function(data) {
             }
-          },
-          success: function(data) {
-          }
-        });
+          });
+        }
       }
 
       total_seconds = total_seconds -1;

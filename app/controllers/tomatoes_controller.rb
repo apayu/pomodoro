@@ -1,10 +1,9 @@
 class TomatoesController < ApplicationController
-  def index
 
+  def index
   end
 
   def about
-
   end
 
   def create
