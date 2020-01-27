@@ -5,49 +5,48 @@ $().ready(function(){
   var total_seconds = set_seconds;
   var minutes, seconds;
 
-  $("#btn_start").click(function(event){
+  $("#btn_start").one("click",function(event){
 
-  event.preventDefault();
+    event.preventDefault();
+    var x = setInterval(function() {
 
-  var x = setInterval(function() {
+      if (total_seconds == 0) {
+        clearInterval(x);
+      }
 
-    if (total_seconds == 0) {
-      clearInterval(x);
-    }
+      minutes = Math.floor(total_seconds/60);
+      seconds = total_seconds % 60;
 
-    minutes = Math.floor(total_seconds/60);
-    seconds = total_seconds % 60;
+      if (minutes <10 ) {
+        minutes = "0" + minutes;
+      }
 
-    if (minutes <10 ) {
-      minutes = "0" + minutes;
-    }
+      if (seconds <10 ) {
+        seconds = "0" + seconds;
+      }
 
-    if (seconds <10 ) {
-      seconds = "0" + seconds;
-    }
+      document.getElementById("pomo_time").innerHTML = minutes + ":" + seconds;
 
-    document.getElementById("pomo_time").innerHTML = minutes + ":" + seconds;
+      if (total_seconds == 0){
+        audio = new Audio('sound.mp3');
+        audio.play();
 
-    if (total_seconds == 0){
-      audio = new Audio('sound.mp3');
-      audio.play();
-
-      $.ajax({
-        url: "tomatoes/",
-        method: "POST",
-        dataType: "json",
-        data: {
-          tomato: {
-            time: set_seconds
+        $.ajax({
+          url: "tomatoes/",
+          method: "POST",
+          dataType: "json",
+          data: {
+            tomato: {
+              time: set_seconds
+            }
+          },
+          success: function(data) {
           }
-        },
-        success: function(data) {
-        }
-      });
-    }
+        });
+      }
 
-    total_seconds = total_seconds -1;
-  }, 1000)
+      total_seconds = total_seconds -1;
+    }, 1000)
   });
 })
 
