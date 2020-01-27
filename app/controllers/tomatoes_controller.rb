@@ -3,6 +3,10 @@ class TomatoesController < ApplicationController
 
   end
 
+  def about
+
+  end
+
   def create
     @tomato = Tomato.new(tomatoes_params)
     @tomato.account_id = current_account.id

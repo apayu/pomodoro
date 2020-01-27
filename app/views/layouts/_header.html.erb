@@ -1,10 +1,14 @@
-<div class="card-header">
-  <div class="float-right">
-     <% if account_signed_in?  %>
-       <%= link_to "登出", destroy_account_session_path, method: :delete, class: "btn btn-primary" %>
-     <% else %>
-       <%= link_to "登入", new_account_session_path, class: "btn btn-outline-primary" %>
-       <%= link_to "註冊", new_account_registration_path, class: "btn btn-primary" %>
-     <% end %>
+<header class="masthead mb-auto">
+  <div class="inner">
+    <h3 class="masthead-brand">Tomate</h3>
+    <nav class="nav nav-masthead justify-content-center">
+      <%= link_to "首頁", root_path, class: current_class?(root_path)  %>
+      <%= link_to "番茄工作法", about_tomatoes_path, class: current_class?(about_tomatoes_path) %>
+       <% if account_signed_in?  %>
+         <%= link_to "登出", destroy_account_session_path, method: :delete, class: current_class?(destroy_account_session_path) %>
+       <% else %>
+         <%= link_to "登入/註冊", new_account_session_path, class: current_class?(new_account_session_path) %>
+       <% end %>
+    </nav>
   </div>
-</div>
+</header>
