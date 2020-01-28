@@ -1,10 +1,18 @@
 $().ready(function(){
-
   // 25 minutes
   var set_seconds = 10;
   var total_seconds = set_seconds;
   var minutes, seconds;
   var user_id = $("#user_id").val();
+  var fu = [
+  "又一天過去了。今天過得怎麼樣，夢想是不是更遠了?",
+  "真正努力過的人，就會明白天賦的重要。",
+  "許多人所謂的追逐夢想，就是不想要辛苦努力地付出，還可以輕鬆自由地生活",
+  "以前覺得自己沒時間追夢，等到放假之後才發覺，自己根本懶得追夢",
+  "今天解決不了的事情，別著急，因為明天也解決不了"
+  ];
+
+  $("#funeng").text(fu[Math.floor(Math.random()*fu.length)]);
 
   $("#btn_start").one("click",function(event){
 
