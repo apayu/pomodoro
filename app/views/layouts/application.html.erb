@@ -16,21 +16,17 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content pa-model-1">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">番茄工作法</h5>
+            <h5 class="modal-title" id="exampleModalLabel">基本步驟</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p class="lead">番茄工作法（英語：Pomodoro Technique）是一種時間管理法</p>
-            <p class="lead">
-            該方法使用一個定時器，來分割出一個一般為25分鐘的工作時間和5分鐘的休息時間，而那些時間段被稱為pomodoros。by </p>
-            <p class="lead">番茄工作法有五個基本步驟：</p>
-            <p class="lead">決定待完成的任務</p>
-            <p class="lead">設定番茄工作法定時器至 n 分鐘（通常為25分鐘）。</p>
-            <p class="lead"> 持續工作直至定時器提示,記下一個x。 </p>
-            <p class="lead"> 短暫休息3-5分鐘。 </p>
-            <p class="lead">每四個x，休息15-30分鐘。</p>
+            <p class="lead">1.決定任務。</p>
+            <p class="lead">2.設定番茄鐘（通常為25分鐘）。</p>
+            <p class="lead">3.持續工作到番茄鐘響起，紀錄一個番茄。 </p>
+            <p class="lead">4.短暫休息3-5分鐘。 </p>
+            <p class="lead">5.每四個番茄，休息15-30分鐘。</p>
           </div>
         </div>
       </div>
@@ -41,7 +37,23 @@
     <div id="modal-2" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
-          ...
+          <form class="needs-validation p-3" novalidate>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom01">番茄時間</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="25" required>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom02">長時間休息</label>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="15" required>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom03">短時間休息</label>
+                <input type="text" class="form-control" id="validationCustom03" placeholder="Last name" value="5" required>
+              </div>
+            </div>
+            <button id="btn-setting-ok" class="btn btn-primary" type="button">確定</button>
+          </form>
         </div>
       </div>
     </div>

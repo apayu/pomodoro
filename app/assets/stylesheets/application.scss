@@ -21,12 +21,15 @@
   font-weight: bold;
 }
 
-#btn_start {
-  font-size: 22px;
+#modal-1, #modal-2 {
+  color: #000;
   font-weight: bold;
 }
+
 #modal-1 {
-  color: #000;
+  p {
+    text-align: left;
+  }
 }
 
 .pa-btn {
@@ -36,6 +39,34 @@
 
 main {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pa-break-color {
+  animation: pulse 3s 1;
+  animation-fill-mode: forwards;
+}
+
+.pa-run-color {
+  animation: pulse_2 3s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgb(240, 91, 86);
+  }
+  100% {
+    background-color: rgb(73, 143, 193);
+  }
+}
+
+@keyframes pulse_2 {
+  0% {
+    background-color: rgb(73, 143, 193);
+  }
+  100% {
+    background-color: rgb(240, 91, 86);
+  }
 }
 
 /*
